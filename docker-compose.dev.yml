@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: JUGS_Backend
+    ports:
+      - "8000"
+    expose:
+      - 8000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: nom run start
